@@ -7,10 +7,7 @@ Este proyecto es una aplicación web desarrollada con Django que permite a los u
 - [Descripción](#descripcion)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologías utilizadas](#tecnologias)
-- [Instalación](#instalacion)
-- [Uso](#uso)
-- [Contribución](#contribucion)
-- [Licencia](#licencia)
+
 
 ## Descripción
 
@@ -34,3 +31,6 @@ Esta aplicación web utiliza la API de OpenWeatherMap para obtener datos meteoro
 - CSS
 - JavaScript
 - OpenWeatherMap API
+
+
+*Archivo requirements.txt incluido
