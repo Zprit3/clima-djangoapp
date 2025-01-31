@@ -1,0 +1,45 @@
+{% load static %}
+
+<div class="container">
+    
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>El Clima</title>
+        <link rel="stylesheet" href="{% static 'weather/styles.css' %}">
+        
+    </head>
+
+    <body>
+        <h1>El Clima</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="ciudad" placeholder="Ingresa una ciudad">
+            <button type="submit">Buscar</button>
+        </form>
+
+        {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+
+        <ul>
+            {% for clima in clima_data %}
+            <li>
+                <h2>{{ clima.ciudad }}</h2>
+                <p>Temperatura: {{ clima.temperatura }}°C</p>
+                <p>Descripción: {{ clima.descripcion }}</p>
+                <img src="http://openweathermap.org/img/w/{{ clima.icono }}.png" alt="Icono del clima">
+            </li>
+            {% endfor %}
+        </ul>
+        <div id="local-temp"></div>
+        <button id="show-local-temp">Mostrar temperatura local</button>
+        <script src="{% static 'weather/scripts.js' %}"></script>
+        <input type="hidden" id="api-key" value="{{ API_KEY }}"> 
+     </body>
+
+    </html>
+</div>
